@@ -12,17 +12,16 @@ int main(int argc, char const *argv[])
         "Master of puppets",
         "Laskyplni",
         "Brdokoky",
+        "Space diver",
         "Irresitible"};
     char searched_text[80];
     puts("What song are you looking for?");
-    scanf("%80s", searched_text);
-    // printf("%ld", (sizeof(songs) / sizeof(char)));
-    printf(sizeof(char));
-    // // for (int i = 0; i < sizeof(songs) / sizeof(char); i++)
-    // {
-    //     if (strcmp(searched_text, songs[i]))
-    //         printf("%s80", songs[i]);
-    // }
+    scanf("%79s", searched_text);
+    for (int i = 0; i < sizeof(songs) / sizeof(songs[0]); i++)
+    {
+        if (strstr(songs[i], searched_text))
+            printf("I found \"%s\" in \"%s\".", searched_text, songs[i]);
+    }
 
     return 0;
 }
