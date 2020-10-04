@@ -43,7 +43,7 @@ int main(int argc, char const *argv[])
     int row = 4;
     int col = 3;
     int **arr2d;
-    arr2d = (int **)malloc(row * (sizeof **arr2d));
+    arr2d = (int **)malloc(row * (sizeof *arr2d));
     unsigned int i;
     unsigned int j;
     for (i = 0; i < row; i++)
@@ -55,8 +55,13 @@ int main(int argc, char const *argv[])
         }
     }
     for (i = 0; i < row; i++)
+    {
         for (j = 0; j < col; j++)
-            printf("%d", *(*(arr2d + i) + j));
+        {
+            printf("%d ", *(*(arr2d + i) + j));
+        }
+        printf("\n");
+    }
 
     for (i = 0; i < row; i++)
         free(*(arr2d + i));
